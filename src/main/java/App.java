@@ -29,16 +29,16 @@ public class App {
         return new ModelAndView(model, layout);
       }, new VelocityTemplateEngine());
 
-      post("/todos", (request, response) -> {
-        HashMap<String, Object> model = new HashMap<String, Object>();
-        Category category = Category.find(Integer.parseInt(request.queryParams("categoryId")));
-        String description = request.queryParams("description");
-        ToDo newToDo = new ToDo(description);
-        category.addToDo(newToDo);
-        model.put("category", category);
-        model.put("template", "templates/category.vtl");
-        return new ModelAndView(model, layout);
-      }, new VelocityTemplateEngine());
+      // post("/todos", (request, response) -> {
+      //   HashMap<String, Object> model = new HashMap<String, Object>();
+      //   Category category = Category.find(Integer.parseInt(request.queryParams("categoryId")));
+      //   String description = request.queryParams("description");
+      //   ToDo newToDo = new ToDo(description);
+      //   category.addToDo(newToDo);
+      //   model.put("category", category);
+      //   model.put("template", "templates/category.vtl");
+      //   return new ModelAndView(model, layout);
+      // }, new VelocityTemplateEngine());
 
       get("/todos/:id", (request, response) -> {
         HashMap<String, Object> model = new HashMap<String, Object>();
