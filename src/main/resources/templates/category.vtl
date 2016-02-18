@@ -1,0 +1,8 @@
+<h3>Here are all the tasks in this category:</h3>
+
+#foreach($todo in $category.getToDos())
+ <h3>$todo.getDescription()</a></h3>
+#end
+
+<a href="/categories/$category.getId()/todos/new">Add a new task</a>
+<a href="/">Return to Main Page</a>

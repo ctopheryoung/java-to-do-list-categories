@@ -1,0 +1,6 @@
+<h1> All tasks </h1>
+<ul>
+  #foreach ($todo in $todos)
+    <a href="/todos/$todo.getId()">$todo.getDescription()</a>
+  #end
+</ul>
